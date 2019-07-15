@@ -15,11 +15,11 @@ public class Printer {
         return this.toner;
     }
 
-
-    public void PrintPages(int copies) {
-        if ((this.paper > copies) & (this.toner > copies)) {
-            this.paper -= copies;
-            this.toner -= copies;
+    public void PrintPages(int pages, int copies) {
+        int total = (pages * copies);
+        if ((this.paper > total) && (this.toner > total)) {
+            this.paper -= total;
+            this.toner -= total;
         }
     }
 

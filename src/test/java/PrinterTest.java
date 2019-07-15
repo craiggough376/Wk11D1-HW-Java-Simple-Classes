@@ -24,15 +24,17 @@ public class PrinterTest {
 
     @Test
     public void canPrintPage(){
-        printer.PrintPages(10);
-        assertEquals(90, printer.GetPaper());
-        assertEquals(40, printer.GetToner());
+        printer.PrintPages(10, 2);
+        assertEquals(80, printer.GetPaper());
+        assertEquals(30, printer.GetToner());
     }
 
-//    @Test
-//    public void notEnoughPaper(){
-//        assertEquals(false, printer.PrintPages(110));
-//    }
+    @Test
+    public void notEnoughPaper(){
+        printer.PrintPages(110, 50);
+        assertEquals(100, printer.GetPaper());
+        assertEquals(50, printer.GetToner());
+    }
 
 
 }
